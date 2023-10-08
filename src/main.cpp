@@ -17,9 +17,9 @@
 #define COOLANT_R2 10000
 
 
-// Creatre objects
-ThermistorSensor ambientTempSensor(AMBIENT_TEMP_PIN, AMBIENT_TEMP_PIN);
-ThermistorSensor coolantTempSensor(COOLANT_TEMP_PIN, COOLANT_TEMP_PIN);
+// Create objects
+ThermistorSensor ambientTempSensor(AMBIENT_TEMP_PIN, AMBIENT_R2);
+ThermistorSensor coolantTempSensor(COOLANT_TEMP_PIN, COOLANT_R2);
 
 void setup()
 {
