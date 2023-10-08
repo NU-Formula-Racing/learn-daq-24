@@ -51,7 +51,7 @@ void loop()
     float coolantTemperature = (1 / 
         (COOLANT_A +
         (COOLANT_B * log(coolantRth) + 
-        (COOLANT_C + pow(log(coolantRth), 3)))));
+        (COOLANT_C * pow(log(coolantRth), 3)))));
     // Convert from K to C for coolant
     coolantTemperature -= 273.15;
 
