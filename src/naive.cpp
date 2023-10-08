@@ -42,6 +42,7 @@ void loop()
 
     // Coolant Temperature
     // Calculate rth for coolant
+    // Can you find the mistake?
     float coolantRawADC = analogRead(COOLANT_TEMP_PIN);
     float coolantVout = coolantRawADC * 3.3f / 4095.0f;
     float coolantRth = ((3.3f * COOLANT_R2) / coolantVout) - COOLANT_R2;
@@ -50,7 +51,7 @@ void loop()
     float coolantTemperature = (1 / 
         (COOLANT_A +
         (COOLANT_B * log(coolantRth) + 
-        (COOLANT_C * pow(log(coolantRth), 3)))));
+        (COOLANT_C + pow(log(coolantRth), 3)))));
     // Convert from K to C for coolant
     coolantTemperature -= 273.15;
 
